@@ -41,7 +41,7 @@ functions:
     handler: functions/ChangePost/index.handler
     events:
       - httpApi:
-          path: /api/post
+          path: /api/post/{id}
           method: put
 
   DeletePost:

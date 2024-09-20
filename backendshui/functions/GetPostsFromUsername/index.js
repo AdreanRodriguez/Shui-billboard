@@ -16,11 +16,9 @@ exports.handler = async (event) => {
       ExpressionAttributeValues: { ":username": username },
     });
 
-    if (!Items || Items.length < 1) {
-      return sendError(404, "No post found on this username");
-    } else {
-      return sendResponse(200, { Items });
-    }
+    if (!Items || Items.length < 1) return sendError(404, "No post found on this username");
+
+    return sendResponse(200, { Items });
   } catch (error) {
     return sendError(error.message);
   }

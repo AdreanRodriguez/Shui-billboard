@@ -5,18 +5,14 @@ exports.handler = async (event) => {
   try {
     const { id } = event.pathParameters;
 
-    if (!id) {
-      return sendError(404, "No post with that id");
-    }
+    if (!id) return sendError(404, "You need to insert postId");
 
-    const getPostResponse = await db.get({
+    const foundPost = await db.get({
       TableName: "Shui-billboard-db",
       Key: { postId: id },
     });
 
-    if (!getPostResponse.Item) {
-      return sendError(404, "Post not found");
-    }
+    if (!foundPost.Item) return sendError(404, "Post not found, check id");
 
     await db.delete({
       TableName: "Shui-billboard-db",
@@ -25,7 +21,7 @@ exports.handler = async (event) => {
 
     return sendResponse(200, {
       message: "Post successfully deleted",
-      deletedPost: getPostResponse.Item,
+      deletedPost: foundPost.Item,
     });
   } catch (error) {
     return sendError(500, error.message);

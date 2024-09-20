@@ -1,7 +1,6 @@
 const { v4: uuid } = require("uuid");
-const { sendResponse, sendError } = require("../../responses/index.js");
 const { db } = require("../../service/index.js");
-const { allPosts } = require("../GetAllPosts/index.js");
+const { sendResponse, sendError } = require("../../responses/index.js");
 
 exports.handler = async (event) => {
   try {
@@ -36,6 +35,7 @@ exports.handler = async (event) => {
     if (message.length < 10) {
       return sendError(400, "You need to type at least 10 characters");
     }
+
     const addMessage = {
       postId: postId,
       createdAt: createdAt,
