@@ -37,11 +37,16 @@ exports.handler = async (event) => {
       return sendError(400, "You need to type at least 10 characters");
     }
     const addMessage = {
-      createdAt: createdAt,
       postId: postId,
+      createdAt: createdAt,
       username: username,
       message: message,
     };
+
+    await db.put({
+      TableName: "Shui-billboard-db",
+      Item: addMessage,
+    });
 
     return sendResponse(200, addMessage);
   } catch (error) {
