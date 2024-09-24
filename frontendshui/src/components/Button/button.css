@@ -1,0 +1,7 @@
+.button {
+  border: none;
+  font-weight: 700;
+  padding: 0.5rem 1rem;
+  font-family: "PT Sans", sans-serif;
+  background-color: rgba(239, 67, 67, 1);
+}

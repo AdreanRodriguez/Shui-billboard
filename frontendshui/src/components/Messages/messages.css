@@ -1,0 +1,87 @@
+.msg__section {
+  min-height: 100vh;
+  margin: 0 auto;
+  overflow: scroll;
+  background-color: rgba(25, 39, 74, 1);
+}
+
+.msg__article {
+  padding: 0.7rem;
+  background-color: rgba(255, 255, 255, 1);
+  margin-left: 1rem;
+  margin-right: 1rem;
+  margin-bottom: 3rem;
+  position: relative;
+}
+
+.msg__article:nth-of-type(1) {
+  margin-top: 1rem;
+  padding-top: 2rem;
+}
+
+.msg__createdAt {
+  font-size: 12px;
+  line-height: 18px;
+  padding-bottom: 1rem;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.msg__line-before--username {
+  width: 22px;
+  margin-right: 0.25rem;
+  border: 1px solid black;
+}
+
+.msg__post {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "PT Sans", sans-serif;
+}
+
+.msg__username-and-btn-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.msg__username-section {
+  display: flex;
+  align-items: center;
+}
+
+.msg__username {
+  font-size: 16px;
+  font-weight: 700;
+  font-style: italic;
+  font-family: "PT Sans", sans-serif;
+}
+
+.msg__change-message {
+  border: none;
+  font-size: 12px;
+  font-weight: 700;
+  font-style: italic;
+  border-radius: 5px;
+  padding: 0.1rem 0.5rem;
+  font-family: "PT Sans", sans-serif;
+  background-color: rgba(239, 67, 67, 1);
+}
+
+.msg__arrow {
+  left: auto;
+  right: 20px;
+  bottom: -32px;
+  position: absolute;
+}
+
+.msg__errorMsg {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-style: italic;
+  color: rgba(239, 67, 67, 1);
+  font-family: "PT Sans", sans-serif;
+}

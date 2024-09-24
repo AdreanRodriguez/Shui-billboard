@@ -1,0 +1,80 @@
+.writePage__wrapper {
+  min-height: 100vh;
+  padding: 0rem 1rem;
+  background-color: rgba(25, 39, 74, 1);
+}
+
+.link-btn {
+  top: 15px;
+  left: 220px;
+  position: absolute;
+}
+
+.writePage__form {
+  height: 100%;
+  margin-top: 3.5rem;
+  position: relative;
+}
+
+.writePage__message-input {
+  width: 100%;
+  resize: none;
+  font-size: 24px;
+  min-height: 348px;
+  line-height: 36px;
+}
+
+.writePage__arrow {
+  right: 0px;
+  bottom: 186px;
+  position: absolute;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.writePage__section {
+  width: 100%;
+  margin-top: 4.5rem;
+}
+
+.writePage__delete-link {
+  top: auto;
+  right: auto;
+  left: auto;
+  bottom: 184px;
+  font-weight: 700;
+  position: absolute;
+}
+
+.writePage__username-input {
+  width: 100%;
+  font-size: 24px;
+  line-height: 36px;
+  padding: 0.5rem 0.5rem;
+  font-family: "PT Sans", sans-serif;
+}
+
+.writePage__btn {
+  width: 100%;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 31px;
+  padding: 0.5rem 0.5rem;
+  margin-top: 1rem;
+  font-family: "PT Sans", sans-serif;
+  background-color: rgba(239, 67, 67, 1);
+}
+
+.writePage__err-msg--message {
+  color: rgb(178, 183, 255);
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+  position: absolute;
+  margin-top: 55px;
+}
+
+.writePage__err-msg--username {
+  color: rgb(178, 183, 255);
+  font-size: 14px;
+  font-family: "PT Sans", sans-serif;
+  position: absolute;
+}

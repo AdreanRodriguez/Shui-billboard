@@ -12,6 +12,7 @@ exports.handler = async (event) => {
       day: "numeric",
       hour: "2-digit",
       minute: "2-digit",
+      timeZone: "Europe/Stockholm",
     });
 
     if (!event.body) {
