@@ -1,5 +1,6 @@
 .write-logo {
   top: auto;
+  z-index: 4;
   right: 10px;
   width: 60px;
   height: 60px;

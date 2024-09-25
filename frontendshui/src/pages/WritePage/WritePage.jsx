@@ -1,12 +1,13 @@
 import "./writePage.css";
 import arrow from "../../assets/arrow.svg";
 import { useEffect, useState } from "react";
+import remove from "../../assets/remove.svg";
 import Slogo from "../../components/Slogo/Slogo";
+import messages from "../../assets/messages.svg";
 import { Link, useLocation } from "react-router-dom";
 import { getAllMessages } from "../../API/GetApi/GetApi";
 import { deletePost } from "../../API/DeleteApi/DeleteApi";
 import { createOrUpdatePost } from "../../API/PostApi/PostApi";
-import Button from "../../components/Button/Button";
 
 const WritePage = () => {
   const location = useLocation();
@@ -60,11 +61,12 @@ const WritePage = () => {
       const postId = location.state.clickedMsg.postId;
 
       await deletePost(postId);
+
+      getAllMessages();
     } catch (error) {
       console.error(error.message);
     }
     // Hämtar alla meddelanden för en smidigare uppdatering när ett meddelande blivit raderat
-    getAllMessages();
   };
 
   return (
@@ -72,8 +74,8 @@ const WritePage = () => {
       <Link to="/search">
         <Slogo />
       </Link>
-      <Link className="link-btn" to="/">
-        <Button title="Alla meddelanden" />
+      <Link className="writePage__link-btn" to="/">
+        <img className="writePage__messages-icon" src={messages} alt="All messages icon" />
       </Link>
       <h2 className="writePage__err-msg--message">{errorMsg}</h2>;
       <form className="writePage__form">
@@ -86,8 +88,13 @@ const WritePage = () => {
         <img className="writePage__arrow" src={arrow} alt="talk arrow" />
         <section className="writePage__section">
           {editMessage && (
-            <Link className="writePage__delete-link" to="/">
-              <Button title="Ta bort meddelande" onClick={handleDelete} />
+            <Link className="writePage__delete-link" to="/" onClick={handleDelete}>
+              <img
+                className="writePage__delete-icon"
+                src={remove}
+                alt="Person throwing something in trashcan"
+              />
+              Ta bort meddelande
             </Link>
           )}
           <h2 className="writePage__err-msg--username">{errorUsername}</h2>;

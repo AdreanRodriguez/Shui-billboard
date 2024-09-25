@@ -1,12 +1,14 @@
-import { useState } from "react";
 import "./searchUsernamePage.css";
+import edit from "../../assets/edit.svg";
+import { useEffect, useState } from "react";
 import Slogo from "../../components/Slogo/Slogo";
+import messages from "../../assets/messages.svg";
 import Button from "../../components/Button/Button";
+import { Link, useLocation } from "react-router-dom";
 import { getAllMessages } from "../../API/GetApi/GetApi";
-import { Link } from "react-router-dom";
-import arrow from "../../assets/arrow.svg";
 
 function SearchUsernamePage() {
+  const location = useLocation();
   const [username, setUsername] = useState("");
   const [userMessages, setUserMessages] = useState([]);
   const [searchedUsername, setSearchedUsername] = useState("");
@@ -24,11 +26,24 @@ function SearchUsernamePage() {
     setUserMessages(foundMessages);
   };
 
+  const editMessage = location.state && location.state.clickedMsg;
+
+  useEffect(() => {
+    if (editMessage) {
+      const { username, message } = editMessage;
+      setUsername(username);
+      setPost(message);
+    }
+  }, [editMessage, location.state]);
+
+  // Ändra här inne så att det även finns en redigering för att kunna ändra meddelanden!!
+
   return (
     <section className="searchUsernamePage__section">
       <Slogo />
       <Link className="searchUsernamePage__link-btn" to="/">
-        <Button title="Alla meddelanden" />
+        <img className="searchUsernamePage__message-icon" src={messages} alt="All messages icon" />
+        {/* <Button title="Alla meddelanden" /> */}
       </Link>
       <form onSubmit={handleSearch}>
         <section className="searchUsernamePage__input-btn--wrapper">
@@ -53,9 +68,14 @@ function SearchUsernamePage() {
           <article className="searchUsernamePage__article" key={index}>
             <p className="searchUsernamePage__createdAt">{msg.createdAt}</p>
             <p className="searchUsernamePage__message">{msg.message}</p>
-            <section className="searchUsernamePage__wrapper-for-line-and-username">
-              <hr className="searchUsernamePage__line-before--username" />
-              <p className="searchUsernamePage__username">{msg.username}</p>
+            <section className="searchUsernamePage__wrapper">
+              <section className="searchUsernamePage__wrapper__for-line-and-username">
+                <hr className="searchUsernamePage__line-before--username" />
+                <p className="searchUsernamePage__username">{msg.username}</p>
+              </section>
+              <Link to="/write" state={{ clickedMsg: msg }}>
+                <img className="msg__edit-btn" src={edit} alt="pen for editing message" />
+              </Link>
             </section>
           </article>
         ))}

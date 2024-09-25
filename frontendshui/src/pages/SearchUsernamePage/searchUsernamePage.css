@@ -3,13 +3,17 @@
   padding-top: 3rem;
   padding-left: 1rem;
   padding-right: 1rem;
-  background-color: rgba(25, 39, 74, 1);
 }
 
 .searchUsernamePage__link-btn {
   top: 13px;
   right: 16px;
   position: absolute;
+}
+
+.searchUsernamePage__message-icon {
+  height: 30px;
+  width: 30px;
 }
 
 .searchUsernamePage__input-btn--wrapper {
@@ -58,10 +62,16 @@
   font-family: "PT Sans", sans-serif;
 }
 
-.searchUsernamePage__wrapper-for-line-and-username {
+.searchUsernamePage__wrapper {
   display: flex;
+  justify-content: space-between;
   align-items: center;
   padding-top: 2rem;
+}
+
+.searchUsernamePage__wrapper__for-line-and-username {
+  display: flex;
+  align-items: center;
 }
 
 .searchUsernamePage__line-before--username {

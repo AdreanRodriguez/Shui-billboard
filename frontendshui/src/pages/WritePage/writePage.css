@@ -1,13 +1,18 @@
 .writePage__wrapper {
   min-height: 100vh;
   padding: 0rem 1rem;
-  background-color: rgba(25, 39, 74, 1);
 }
 
-.link-btn {
+.writePage__link-btn {
   top: 15px;
-  left: 220px;
+  right: 20px;
+  left: auto;
   position: absolute;
+}
+
+.writePage__messages-icon {
+  height: 35px;
+  width: 35px;
 }
 
 .writePage__form {
@@ -19,16 +24,15 @@
 .writePage__message-input {
   width: 100%;
   resize: none;
-  font-size: 24px;
+  font-size: 20px;
   min-height: 348px;
   line-height: 36px;
 }
 
 .writePage__arrow {
   right: 0px;
-  bottom: 186px;
+  bottom: 182px;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.1);
 }
 
 .writePage__section {
@@ -40,14 +44,26 @@
   top: auto;
   right: auto;
   left: auto;
-  bottom: 184px;
+  bottom: 180px;
   font-weight: 700;
   position: absolute;
+  display: flex;
+  align-items: baseline;
+  text-decoration: none;
+  color: rgba(239, 67, 67, 1);
+}
+
+.writePage__delete-icon {
+  margin-right: 0.5rem;
+}
+
+.writePage__figcaption {
+  color: rgba(239, 67, 67, 1);
 }
 
 .writePage__username-input {
   width: 100%;
-  font-size: 24px;
+  font-size: 20px;
   line-height: 36px;
   padding: 0.5rem 0.5rem;
   font-family: "PT Sans", sans-serif;
@@ -55,26 +71,28 @@
 
 .writePage__btn {
   width: 100%;
+  border: none;
   font-size: 24px;
+  cursor: pointer;
   font-weight: 700;
+  margin-top: 1rem;
   line-height: 31px;
   padding: 0.5rem 0.5rem;
-  margin-top: 1rem;
   font-family: "PT Sans", sans-serif;
   background-color: rgba(239, 67, 67, 1);
 }
 
 .writePage__err-msg--message {
-  color: rgb(178, 183, 255);
   font-size: 14px;
-  font-family: "PT Sans", sans-serif;
-  position: absolute;
   margin-top: 55px;
+  position: absolute;
+  color: rgb(178, 183, 255);
+  font-family: "PT Sans", sans-serif;
 }
 
 .writePage__err-msg--username {
-  color: rgb(178, 183, 255);
   font-size: 14px;
-  font-family: "PT Sans", sans-serif;
   position: absolute;
+  color: rgb(178, 183, 255);
+  font-family: "PT Sans", sans-serif;
 }

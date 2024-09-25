@@ -1,15 +1,14 @@
-#root {
-  max-width: 411px;
-  margin: 0 auto;
-  position: relative;
-}
-/* 
-body {
-  position: relative;
-} */
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+#root {
+  min-height: 100vh;
+  max-width: 411px;
+  margin: 0 auto;
+  position: relative;
+  overflow: scroll;
+  background-color: rgba(25, 39, 74, 1);
 }

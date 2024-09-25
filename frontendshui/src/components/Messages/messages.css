@@ -1,8 +1,29 @@
-.msg__section {
+/* .msg__section {
   min-height: 100vh;
   margin: 0 auto;
   overflow: scroll;
   background-color: rgba(25, 39, 74, 1);
+} */
+
+.msg__sort-wrapper {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 1rem;
+  margin-right: 1.25rem;
+  margin-bottom: 20px;
+}
+
+.msg__sort-icon {
+  height: 35px;
+  width: 35px;
+  cursor: pointer;
+}
+
+.msg__sort-icon--text {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "PT Sans", sans-serif;
+  color: rgba(239, 67, 67, 1);
 }
 
 .msg__article {
@@ -12,11 +33,6 @@
   margin-right: 1rem;
   margin-bottom: 3rem;
   position: relative;
-}
-
-.msg__article:nth-of-type(1) {
-  margin-top: 1rem;
-  padding-top: 2rem;
 }
 
 .msg__createdAt {
@@ -38,7 +54,7 @@
   font-family: "PT Sans", sans-serif;
 }
 
-.msg__username-and-btn-section {
+.msg__username-and-edit-section {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,15 +73,9 @@
   font-family: "PT Sans", sans-serif;
 }
 
-.msg__change-message {
-  border: none;
-  font-size: 12px;
-  font-weight: 700;
-  font-style: italic;
-  border-radius: 5px;
-  padding: 0.1rem 0.5rem;
-  font-family: "PT Sans", sans-serif;
-  background-color: rgba(239, 67, 67, 1);
+.msg__edit-btn {
+  height: 15px;
+  width: 15px;
 }
 
 .msg__arrow {
@@ -75,13 +85,44 @@
   position: absolute;
 }
 
-.msg__errorMsg {
+.msg__error-section {
   height: 100vh;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.msg__errorMsg {
+  display: flex;
   justify-content: center;
+  font-size: 32px;
   font-weight: 700;
   font-style: italic;
-  color: rgba(239, 67, 67, 1);
+  color: #ffffff;
+  line-height: 48px;
   font-family: "PT Sans", sans-serif;
+}
+
+.msg__sort-label {
+  margin-right: 10px;
+  font-size: 16px;
+  color: #333;
+}
+
+.msg__sort-select {
+  padding: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.msg__wave-wrapper {
+  position: relative;
+}
+
+.msg__error-wave1 {
+  position: absolute;
+}
+
+.msg__error-wave2 {
+  position: absolute;
 }
