@@ -43,7 +43,12 @@ const WritePage = () => {
     }
 
     try {
-      await createOrUpdatePost(username, post);
+      // Om det finns ett redigerbart meddelande, uppdatera istället för att skapa nytt
+      if (editMessage) {
+        await createOrUpdatePost(username, post, editMessage.postId);
+      } else {
+        await createOrUpdatePost(username, post);
+      }
 
       // Tömma post & username efter man tryckt på knappen
       setPost("");
@@ -66,7 +71,6 @@ const WritePage = () => {
     } catch (error) {
       console.error(error.message);
     }
-    // Hämtar alla meddelanden för en smidigare uppdatering när ett meddelande blivit raderat
   };
 
   return (
