@@ -36,14 +36,11 @@ function SearchUsernamePage() {
     }
   }, [editMessage, location.state]);
 
-  // Ändra här inne så att det även finns en redigering för att kunna ändra meddelanden!!
-
   return (
     <section className="searchUsernamePage__section">
       <Slogo />
       <Link className="searchUsernamePage__link-btn" to="/">
         <img className="searchUsernamePage__message-icon" src={messages} alt="All messages icon" />
-        {/* <Button title="Alla meddelanden" /> */}
       </Link>
       <form onSubmit={handleSearch}>
         <section className="searchUsernamePage__input-btn--wrapper">

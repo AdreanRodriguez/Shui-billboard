@@ -41,7 +41,7 @@ const Messages = () => {
   };
 
   return (
-    <section className="msg__section">
+    <section>
       <figure className="msg__sort-wrapper">
         <img className="msg__sort-icon" src={date} alt="Date icon" onClick={handleSortDates} />
       </figure>
