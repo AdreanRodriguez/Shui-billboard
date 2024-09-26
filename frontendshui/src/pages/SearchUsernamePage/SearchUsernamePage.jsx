@@ -10,7 +10,6 @@ import { getAllMessages } from "../../API/GetApi/GetApi";
 
 function SearchUsernamePage() {
   const location = useLocation();
-  console.log("LOCATION", location);
 
   const [username, setUsername] = useState("");
   const [userMessages, setUserMessages] = useState([]);

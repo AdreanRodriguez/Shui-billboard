@@ -40,6 +40,16 @@ const Messages = () => {
     setAllMessages(sortedMessages);
   };
 
+  const formattedDate = {
+    weekday: "long",
+    year: "numeric",
+    month: "short",
+    day: "numeric",
+    hour: "2-digit",
+    minute: "2-digit",
+    timeZone: "Europe/Stockholm",
+  };
+
   return (
     <section>
       <figure className="msg__sort-wrapper">
@@ -51,9 +61,11 @@ const Messages = () => {
             <article key={index} className="msg__article">
               <p className="msg__createdAt">
                 {msg.updatedAt ? (
-                  <span>(ändrad) {new Date(msg.updatedAt).toLocaleString().substring(0, 16)}</span>
+                  <span>
+                    (ändrad) {new Date(msg.updatedAt).toLocaleString("sv-SE", formattedDate)}
+                  </span>
                 ) : (
-                  new Date(msg.createdAt).toLocaleString()
+                  new Date(msg.createdAt).toLocaleString("sv-SE", formattedDate)
                 )}
               </p>
               <p className="msg__post">{msg.message}</p>
