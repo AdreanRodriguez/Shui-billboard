@@ -86,3 +86,16 @@
   font-style: italic;
   font-family: "PT Sans", sans-serif;
 }
+
+.searchUsernamePage__edit-btn {
+  width: 20px;
+  height: 20px;
+}
+
+.searchUsernamePage__arrow {
+  top: auto;
+  left: auto;
+  right: 20px;
+  bottom: -32px;
+  position: absolute;
+}

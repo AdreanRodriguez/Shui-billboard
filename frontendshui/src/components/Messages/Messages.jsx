@@ -46,22 +46,30 @@ const Messages = () => {
         <img className="msg__sort-icon" src={date} alt="Date icon" onClick={handleSortDates} />
       </figure>
       {allMessages.length > 0 ? (
-        allMessages.map((msg, index) => (
-          <article key={index} className="msg__article">
-            <p className="msg__createdAt">{new Date(msg.createdAt).toLocaleString()}</p>
-            <p className="msg__post">{msg.message}</p>
-            <section className="msg__username-and-edit-section">
-              <section className="msg__username-section">
-                <hr className="msg__line-before--username" />
-                <p className="msg__username">{msg.username}</p>
+        allMessages.map((msg, index) => {
+          return (
+            <article key={index} className="msg__article">
+              <p className="msg__createdAt">
+                {msg.updatedAt ? (
+                  <span>(ändrad) {new Date(msg.updatedAt).toLocaleString().substring(0, 16)}</span>
+                ) : (
+                  new Date(msg.createdAt).toLocaleString()
+                )}
+              </p>
+              <p className="msg__post">{msg.message}</p>
+              <section className="msg__username-and-edit-section">
+                <section className="msg__username-section">
+                  <hr className="msg__line-before--username" />
+                  <p className="msg__username">{msg.username}</p>
+                </section>
+                <Link to="/write" state={{ clickedMsg: msg }}>
+                  <img className="msg__edit-btn" src={edit} alt="pen for editing message" />
+                </Link>
               </section>
-              <Link to="/write" state={{ clickedMsg: msg }}>
-                <img className="msg__edit-btn" src={edit} alt="pen for editing message" />
-              </Link>
-            </section>
-            <img className="msg__arrow" src={arrow} alt="talk arrow" />
-          </article>
-        ))
+              <img className="msg__arrow" src={arrow} alt="talk arrow" />
+            </article>
+          );
+        })
       ) : (
         <section className="msg__error-section">
           <p className="msg__errorMsg">Inga meddelanden att visa</p>

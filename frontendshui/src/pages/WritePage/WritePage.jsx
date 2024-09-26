@@ -81,7 +81,7 @@ const WritePage = () => {
       <Link className="writePage__link-btn" to="/">
         <img className="writePage__messages-icon" src={messages} alt="All messages icon" />
       </Link>
-      <h2 className="writePage__err-msg--message">{errorMsg}</h2>;
+      <h2 className="writePage__err-msg--message">{errorMsg}</h2>
       <form className="writePage__form">
         <textarea
           id="textarea-message"
@@ -101,7 +101,7 @@ const WritePage = () => {
               Ta bort meddelande
             </Link>
           )}
-          <h2 className="writePage__err-msg--username">{errorUsername}</h2>;
+          <h2 className="writePage__err-msg--username">{errorUsername}</h2>
           <input
             id="input-username"
             className="writePage__username-input"

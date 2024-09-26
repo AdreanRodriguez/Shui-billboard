@@ -6,7 +6,7 @@ import Messages from "../../components/Messages/Messages";
 
 function MessagePage() {
   return (
-    <section>
+    <section className="messagePage__section">
       <Link to="/search">
         <Slogo />
       </Link>

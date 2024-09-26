@@ -1,5 +1,6 @@
 import "./searchUsernamePage.css";
 import edit from "../../assets/edit.svg";
+import arrow from "../../assets/arrow.svg";
 import { useEffect, useState } from "react";
 import Slogo from "../../components/Slogo/Slogo";
 import messages from "../../assets/messages.svg";
@@ -9,6 +10,8 @@ import { getAllMessages } from "../../API/GetApi/GetApi";
 
 function SearchUsernamePage() {
   const location = useLocation();
+  console.log("LOCATION", location);
+
   const [username, setUsername] = useState("");
   const [userMessages, setUserMessages] = useState([]);
   const [searchedUsername, setSearchedUsername] = useState("");
@@ -61,21 +64,28 @@ function SearchUsernamePage() {
         )}
       </form>
       {userMessages.length > 0 &&
-        userMessages.map((msg, index) => (
-          <article className="searchUsernamePage__article" key={index}>
-            <p className="searchUsernamePage__createdAt">{msg.createdAt}</p>
-            <p className="searchUsernamePage__message">{msg.message}</p>
-            <section className="searchUsernamePage__wrapper">
-              <section className="searchUsernamePage__wrapper__for-line-and-username">
-                <hr className="searchUsernamePage__line-before--username" />
-                <p className="searchUsernamePage__username">{msg.username}</p>
+        userMessages.map((msg, index) => {
+          return (
+            <article className="searchUsernamePage__article" key={index}>
+              <p className="searchUsernamePage__createdAt">{msg.createdAt}</p>
+              <p className="searchUsernamePage__message">{msg.message}</p>
+              <section className="searchUsernamePage__wrapper">
+                <section className="searchUsernamePage__wrapper__for-line-and-username">
+                  <hr className="searchUsernamePage__line-before--username" />
+                  <p className="searchUsernamePage__username">{msg.username}</p>
+                </section>
+                <Link to="/write" state={{ clickedMsg: msg }}>
+                  <img
+                    className="searchUsernamePage__edit-btn"
+                    src={edit}
+                    alt="pen for editing message"
+                  />
+                </Link>
               </section>
-              <Link to="/write" state={{ clickedMsg: msg }}>
-                <img className="msg__edit-btn" src={edit} alt="pen for editing message" />
-              </Link>
-            </section>
-          </article>
-        ))}
+              <img className="searchUsernamePage__arrow" src={arrow} alt="Talk arrow" />
+            </article>
+          );
+        })}
     </section>
   );
 }

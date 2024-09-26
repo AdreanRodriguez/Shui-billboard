@@ -2,30 +2,30 @@
   display: flex;
   justify-content: flex-end;
   margin-top: 1rem;
-  margin-right: 1.25rem;
   margin-bottom: 20px;
+  margin-right: 1.25rem;
 }
 
 .msg__sort-icon {
-  height: 35px;
   width: 35px;
+  height: 35px;
   cursor: pointer;
 }
 
 .msg__sort-icon--text {
   font-size: 16px;
   line-height: 24px;
-  font-family: "PT Sans", sans-serif;
   color: rgba(239, 67, 67, 1);
+  font-family: "PT Sans", sans-serif;
 }
 
 .msg__article {
-  padding: 0.7rem;
-  background-color: rgba(255, 255, 255, 1);
+  padding: 0.5rem;
   margin-left: 1rem;
   margin-right: 1rem;
   margin-bottom: 3rem;
   position: relative;
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .msg__createdAt {
@@ -48,10 +48,10 @@
 }
 
 .msg__username-and-edit-section {
+  margin-top: 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-top: 2rem;
 }
 
 .msg__username-section {
@@ -67,8 +67,8 @@
 }
 
 .msg__edit-btn {
-  height: 15px;
-  width: 15px;
+  width: 20px;
+  height: 20px;
 }
 
 .msg__arrow {
@@ -90,16 +90,16 @@
   justify-content: center;
   font-size: 32px;
   font-weight: 700;
-  font-style: italic;
   color: #ffffff;
   line-height: 48px;
+  font-style: italic;
   font-family: "PT Sans", sans-serif;
 }
 
 .msg__sort-label {
-  margin-right: 10px;
-  font-size: 16px;
   color: #333;
+  font-size: 16px;
+  margin-right: 10px;
 }
 
 .msg__sort-select {

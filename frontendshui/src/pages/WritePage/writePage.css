@@ -4,8 +4,8 @@
 }
 
 .writePage__link-btn {
-  top: 15px;
-  right: 20px;
+  top: 10px;
+  right: 16px;
   left: auto;
   position: absolute;
 }
@@ -17,7 +17,7 @@
 
 .writePage__form {
   height: 100%;
-  margin-top: 3.5rem;
+  margin-top: 4.5rem;
   position: relative;
 }
 
@@ -25,13 +25,14 @@
   width: 100%;
   resize: none;
   font-size: 20px;
+  padding: 0.5rem;
   min-height: 348px;
   line-height: 36px;
 }
 
 .writePage__arrow {
   right: 0px;
-  bottom: 182px;
+  bottom: 164px;
   position: absolute;
 }
 
@@ -44,7 +45,7 @@
   top: auto;
   right: auto;
   left: auto;
-  bottom: 180px;
+  bottom: 160px;
   font-weight: 700;
   position: absolute;
   display: flex;
@@ -83,8 +84,8 @@
 }
 
 .writePage__err-msg--message {
+  top: 50px;
   font-size: 14px;
-  margin-top: 55px;
   position: absolute;
   color: rgb(178, 183, 255);
   font-family: "PT Sans", sans-serif;
@@ -93,6 +94,7 @@
 .writePage__err-msg--username {
   font-size: 14px;
   position: absolute;
+  bottom: 125px;
   color: rgb(178, 183, 255);
   font-family: "PT Sans", sans-serif;
 }
